@@ -1,0 +1,15 @@
+<h1>ユーザー一覧</h1>
+<% @users.each do |u| %>
+<p>
+  <%= u.id %>
+  <%= u.name %>
+  <%= u.phone %>
+  <%= link_to "[詳細]" , user_path(u.id) %>
+  <%= link_to "[編集]" , edit_user_path(u.id) %>
+  <%= link_to "[削除]" , user_path(u.id), method: :delete, data: {confirm: '削除してよろしいですか?' } %>
+</p>
+<% end %>
+
+<p>
+  <%= link_to "新規登録", new_user_path %>
+</p>
